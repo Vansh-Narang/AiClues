@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 
 const Login = () => {
     const navigate = useNavigate()
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false)
@@ -27,7 +27,7 @@ const Login = () => {
                 const token = res.data.data.access_token;
                 //   console.log(token)
                 localStorage.setItem('token', token);
-                dispatch({ type: 'LOGIN', payload: token });
+                // dispatch({ type: 'LOGIN', payload: token });
                 navigate("/")
             }
             // else {
@@ -41,6 +41,17 @@ const Login = () => {
             console.log(error.message);
         }
     }
+    useEffect(() => {
+        // Check if user is already logged in
+        const token = localStorage.getItem('token');
+        if (token) {
+            // User is already logged in, redirect to home page
+            navigate('/');
+        }
+        else {
+            navigate("/login")
+        }
+    }, [navigate]);
     return (
         <div className="h-screen text-center font-normal">
             {

@@ -64,7 +64,7 @@ const Home = () => {
                         )
                     }
                 </div>
-                <Link to={"user-routes"} state={selectedSkills} className='bg-blue-400 p-2 mr-28 mt-10'>View Skills</Link>
+                <Link to={"user-skills"} state={selectedSkills} className='bg-blue-400 p-2 mr-28 mt-10'>View Skills</Link>
             </div>
         </div >
     )

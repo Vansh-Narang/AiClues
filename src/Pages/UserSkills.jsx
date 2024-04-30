@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { RxCross2 } from "react-icons/rx";
 const UserSkills = () => {
     const location = useLocation();
@@ -22,8 +22,10 @@ const UserSkills = () => {
                                 {d.display_name}<RxCross2 />
                                 {'  '}
                             </div>
-                        )) : <div className='font-normal text-4xl items-center'>
+                        )) : <div className='font-normal text-2xl items-center'>
                             No skills to show
+                            <br />
+                            <Link to="/" className='text-blue-400'>Add skills</Link>
                         </div>
                 }
             </div>
