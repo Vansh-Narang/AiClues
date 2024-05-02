@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-    const token = useSelector((state) => state.token);
+    // const token = useSelector((state) => state.token);
     // const handleViewUserSkills = () => {
     //     redirect("/user-routes")
     // };
